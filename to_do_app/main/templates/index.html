@@ -1,0 +1,35 @@
+<!-- index.html -->
+{% extends "base.html" %}
+{% block content %}
+<!--index.html-->
+{% if object_list %}
+<h3>All my lists</h3>
+{% endif %}
+
+ <div class="container text-right">
+        <a href="/add_due/add_due.html">Add Due</a>
+    </div>
+    <div class="container">
+        {% for todo_list in object_list %}
+        <div class="row align-items-start">
+            <table>
+                <th>
+                    <td>ID</td>
+                    <td>Name</td>
+                    <td>Date</td>
+                    <td>Edit</td>
+                    <td>Delete</td>
+                </th>
+                <th>
+
+                </th>
+            </table>
+        </div>
+        {% empty %}
+        <h4 class="display-5">You have no lists!</h4>
+        {% endfor %}
+
+
+    </div>
+
+{% endblock %}
